@@ -3,3 +3,5 @@
 users/pictures
 users/__pycache__
 *.pyc
+
+*.env
