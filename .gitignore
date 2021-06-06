@@ -1,2 +1,5 @@
 /pictures
 *.jpg
+users/pictures
+users/__pycache__
+*.pyc

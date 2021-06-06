@@ -14,18 +14,18 @@ class ProfileAdmin(admin.ModelAdmin):
     list_display = (
         'id',
         'user', 
-        'phone_nomber', 
+        'phone_number', 
         'website', 
         'picture'
     )
     list_display_links = ('id','user')
-    list_editable = ('phone_nomber', 'website', 'picture')
+    list_editable = ('phone_number', 'website', 'picture')
     search_fields = (
         'user__email',
         'user__username', 
         'user__first_name', 
         'user__last_name', 
-        'phone_nomber'
+        'phone_number'
     )
 
     list_filter =(
@@ -33,4 +33,19 @@ class ProfileAdmin(admin.ModelAdmin):
         'modified', 
         'user__is_active', 
         'user__is_staff'
+    )
+
+    fieldsets = (
+        ('Profile', {
+            'fields': (
+                #si queremos que los elementos esten juntos deben estar en una tupla ambos
+                ('user', 'picture'),
+            ),
+        }),
+        ('Extra Info', {
+            'fields': (
+                ('website', 'phone_number'),
+                ('biography')
+            ),
+        }),
     )

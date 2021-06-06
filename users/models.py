@@ -19,7 +19,7 @@ class Profile(models.Model):
 
     biography = models.TextField(blank=True)
 
-    phone_nomber = models.CharField(max_length=12, blank=True)
+    phone_number = models.CharField(max_length=12, blank=True)
 
     picture = models.ImageField(
         upload_to = 'users/pictures', 
