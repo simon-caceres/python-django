@@ -9,7 +9,11 @@ class Profile(models.Model):
         Proxy model that extends the base data with other information
     """
     #Cascade imita el Cascade de sql logic
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(
+        User, 
+        on_delete=models.CASCADE
+    )
+    
 
     website = models.URLField(max_length=200, blank=True)
 
